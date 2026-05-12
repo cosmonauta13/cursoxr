@@ -7,14 +7,26 @@
   </head>
 
   <body>
-    <a-scene xr-mode-ui="XRMode: xr"></a-scene>
+    <a-scene xr-mode-ui="XRMode: xr">
+
+      <a-entity position="5 1.6 0" rotation="0 0 0">
+      <a-camera wasd-controls="aceleration: 100; fly: true"
+       look-controls></a-camera></a-entity>
+
+      <a-entity movement-controls="fly: true" position="5 1.6 0"  rotation="0 0 0"> 
+      <a-camera wasd-controls="aceleration: 100; fly: true" look-controls ></a-camera>
+      <a-entity oculus-touch-controls="hand: right"></a-entity>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      </a-entity>
+   
     <a-assets><img id="fondo" src="cosmos.jpeg"> </a-assets>
     <a-sphere position="0 1.25 -2" radius="3" color="light orange"></a-sphere>
         <a-sphere position="0 1.25 -4" radius="2" color="brown"></a-sphere>
 
 <a-sky hide-on-enter-ar src="#fondo"></a-sky>
-
+  </a-scene>
   </body>
+
 </html>
 
     
