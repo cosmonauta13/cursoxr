@@ -7,10 +7,13 @@
 
 <body>
     <a-scene xr-mode-ui="XRMode: xr">
-        <a-light type="ambient" color="white"></a-light>
         <a-entity environment="preset: contact"></a-entity>
-
-    </a-scene> 
+        
+    <a-assets>
+        <video id="mivideo"  src="29982-378308905_medium.mp4" loop muted></video>
+    </a-assets>
+    <a-video src="29982-378308905_medium.mp4" width="4" heigth="3"></a-video>
+    </a-scene>  
 
 </body>
 </html>
