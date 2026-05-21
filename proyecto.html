@@ -1,23 +1,84 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.5.x/dist/aframe-environment-component.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Taller Virtual</title>
+
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 
 <body>
-    <a-scene xr-mode-ui="XRMode: xr">
-    </a-entity>
-     
-        <video id="fondo360" src="14205-255658030_medium.mp4"
-               autoplay loop muted playsinline
-               crossorigin="anonymous">
-        </video>
-      </a-assets>
-   
-  
-    <a-video src="#fondo360" width="4" heigth="3" position="0 2 -4" autoplay></a-video>
-    </a-scene>  
+
+<a-scene>
+
+  <!-- Cámara -->
+  <a-entity position="0 1.6 6">
+    <a-camera></a-camera>
+  </a-entity>
+
+  <!-- Suelo -->
+  <a-plane
+    rotation="-90 0 0"
+    width="20"
+    height="20"
+    color="#888888">
+  </a-plane>
+
+  <!-- Cielo -->
+  <a-sky color="#DDEEFF"></a-sky>
+
+  <!-- Mesa de trabajo -->
+  <a-box
+    position="0 1 -4"
+    width="6"
+    height="1"
+    depth="2"
+    color="#8B4513">
+  </a-box>
+
+  <!-- Martillo -->
+  <a-box
+    position="-2 2 -4"
+    width="1"
+    height="0.2"
+    depth="0.2"
+    color="gray">
+  </a-box>
+
+  <a-cylinder
+    position="-2.5 1.8 -4"
+    radius="0.05"
+    height="1"
+    rotation="0 0 90"
+    color="#DEB887">
+  </a-cylinder>
+
+  <!-- Destornillador -->
+  <a-cylinder
+    position="0 1.8 -4"
+    radius="0.05"
+    height="1"
+    rotation="0 0 90"
+    color="red">
+  </a-cylinder>
+
+  <!-- Alicates -->
+  <a-cone position="2 1.8 -4" radius-bottom="0.2" height="0.8" rotation="90 0 0" color="black">
+  </a-cone>
+
+  <!-- Etiquetas -->
+  <a-text value="Martillo" position="-2 2.5 -4" color="black">
+  </a-text>
+
+  <a-text value="Destornillador" position="-0.5 2.5 -4" color="black">
+  </a-text>
+
+  <a-text value="Alicates" position="1.5 2.5 -4" color="black"></a-text>
+
+  <!-- Luz -->
+  <a-light type="point" intensity="1.5" position="0 5 2"></a-light>
+
+</a-scene>
 
 </body>
 </html>
