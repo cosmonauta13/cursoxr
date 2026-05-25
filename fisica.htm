@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="//aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/MozillaReality/ammo.js@8bbc0ea/builds/ammo.wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.js"></script>
+  </head>
+  <body>
+    <a-scene physics="driver: ammo; debug: true; debugDrawMode: 1;">
+      <!-- Camera -->
+        <a-entity camera position="0 1.6 5" look-controls wasd-controls></a-entity>
+      <!-- Static floor -->
+      <a-plane ammo-body="type: static" ammo-shape="type: box"
+          position="0 0 -4" rotation="-90 0 0" width="8" height="8"
+          color="yellow"></a-plane>
+      
+      <a-sphere ammo-body="type: dynamic" ammo-shape="type: box"
+          position="0 4 -2" radius="2"
+          color="red"></a-sphere>
+      <!-- Dynamic box -->
+      <a-box ammo-body="type: dynamic" ammo-shape="type: box"
+          position="2 10 0" width="1" height="1" depth="1"
+          color="blue"></a-box>
+    </a-scene>
+
+  </body>
+</html>
